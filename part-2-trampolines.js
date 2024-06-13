@@ -18,23 +18,18 @@ function flattenArray2(arr) {
   }, []);
 }
 
-const nestedArr = [1, 2, [3, 4, [5, 6]]];
+function flattenArray3(arr) {
+  let result = [];
 
-function testPerformance(func) {
-  const start = performance.now();
-  const flatArray = func(nestedArr);
-  const end = performance.now();
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      result = result.concat(flattenArray3(item));
+    } else {
+      result.push(item);
+    }
+  });
 
-  console.log('Flattened array length:', flatArray.length);
-  console.log(
-    `Time taken to flatten array: ${
-      end - start
-    } milliseconds using the function: ${func.name}`
-  );
+  return result;
 }
 
-console.log(flattenArray1);
-testPerformance(flattenArray1);
-
-console.log(flattenArray2);
-testPerformance(flattenArray2);
+const nestedArr = [1, [2, [3, 4], 5], 6];

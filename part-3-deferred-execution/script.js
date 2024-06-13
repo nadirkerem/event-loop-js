@@ -24,6 +24,7 @@ function primeUpToN(n) {
 primeUpToN(10000);
 */
 
+/*
 const text = document.createElement('p');
 document.body.appendChild(text);
 
@@ -56,6 +57,33 @@ function primeUpToN(n) {
   }
 
   calculateNextPrime();
+}
+
+primeUpToN(10000);
+
+*/
+
+const text = document.createElement('p');
+
+function primeUpToN(n) {
+  let primeNumbers = [];
+  for (let i = 3; i < n; i += 2) {
+    let isPrime = true;
+    for (let m = 3; m ** 2 <= i; m += 2) {
+      if (i % m === 0) {
+        isPrime = false;
+      }
+    }
+    if (isPrime) {
+      primeNumbers.push(i);
+    }
+  }
+
+  text.innerHTML = primeNumbers.join('<br>');
+  document.body.appendChild(text);
+  setTimeout(() => {
+    alert('The calculation is finished');
+  }, 0);
 }
 
 primeUpToN(10000);
