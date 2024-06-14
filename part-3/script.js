@@ -1,7 +1,6 @@
 /*
 const text = document.createElement('p');
 
-
 function primeUpToN(n) {
   let primeNumbers = [];
   for (let i = 3; i < n; i += 2) {
@@ -60,7 +59,6 @@ function primeUpToN(n) {
 }
 
 primeUpToN(10000);
-
 */
 
 const text = document.createElement('p');

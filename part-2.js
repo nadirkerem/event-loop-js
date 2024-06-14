@@ -1,3 +1,5 @@
+// PART 2 TRAMPOLINES
+
 function flattenArray1(arr) {
   let flattenedArray = arr.flat();
   if (

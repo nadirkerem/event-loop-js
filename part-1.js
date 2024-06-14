@@ -1,3 +1,5 @@
+// PART 1 STACK OVERFLOW
+
 let counter = 1;
 
 function increment() {
